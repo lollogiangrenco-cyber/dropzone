@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DROPZONE — Fornitori Diretti & Risorse Digitali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <a href="#" class="brand">
+      <div class="mark">D</div>
+      DROPZONE
+    </a>
+
+    <nav class="navlinks" id="navLinks">
+      <a href="#prodotti">Prodotti</a>
+      <a href="#anteprima">Cosa ricevi</a>
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="navcta" id="openCartBtn">
+        Carrello <span id="cartCount">0</span> ↗
+      </button>
+      <button class="menu" id="menuBtn" aria-label="Apri menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="orb"></div>
+    <div class="eyebrow"><i></i>DIGITAL RESOURCES · ACCESSO IMMEDIATO</div>
+    <h1>Il tuo prossimo<br><span>business</span> inizia<br>da qui.</h1>
+    <p>
+      Fornitori verificati, contatti diretti e listini selezionati per reselling.<br>
+      Nessun intermediario, spedizioni rapide in Europa, tutto in un unico posto.
+    </p>
+    <div class="actions">
+      <a href="#prodotti" class="btn primary">Esplora le liste <b>↗</b></a>
+      <a href="#anteprima" class="btn ghost">Vedi anteprima</a>
+    </div>
+    <div class="herofoot">
+      <span>01 / DIGITAL STORE</span>
+      <span>SCROLL TO EXPLORE ↓</span>
+    </div>
+  </section>
+
+  <!-- CATALOGO PRODOTTI -->
+  <section class="intro" id="prodotti">
+    <div class="sectiontag">01 — CATALOGO</div>
+    <div class="sectionhead">
+      <h2>Scegli la tua<br><span>nicchia.</span></h2>
+      <p>
+        Directory digitali aggiornate con contatti diretti WhatsApp, WeChat e cataloghi.<br>
+        Download immediato dopo l'acquisto.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <!-- 1. BUNDLE COMPLETO -->
+      <article class="product featured">
+        <div class="badge">BEST SELLER · RISPARMIA 40€</div>
+        <div class="visual">
+          <div class="glow"></div>
+          <div class="cube">
+            ALL
+            <small>FULL ACCESS</small>
+          </div>
+        </div>
+        <div class="pinfo">
+          <small>01 / ALL-ACCESS PACK</small>
+          <h3>Bundle Completo (Tutte le Liste)</h3>
+          <p>Accesso completo a tutte le 6 categorie: Streetwear & Firmato, Sneakers, Profumi, Elettronica, Svapo e LEGO. Il pacchetto definitivo per iniziare subito.</p>
+          <div class="price">€25,00 <del>€65,94</del></div>
+          <button class="buy" onclick="addToCart('bundle', 'Bundle Completo (Tutte le Liste)', 25.00)">
+            <span>Aggiungi al carrello</span>
+            <span>+ ↗</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- 2. STREETWEAR, VESTITI DI MARCA E SCARPE -->
+      <article class="product">
+        <div class="badge muted">TOP CHOICE</div>
+        <div class="visual">
+          <div class="glow"></div>
+          <div class="cube">
+            DZ
+            <small>FASHION & SHOES</small>
+          </div>
+        </div>
+        <div class="pinfo">
+          <small>02 / DIRECTORY</small>
+          <h3>Streetwear, Vestiti di Marca & Scarpe</h3>
+          <p>Contatti diretti per abbigliamento streetwear, brand luxury, tute, giubbotti e calzature di tendenza con spedizione veloce.</p>
+          <div class="price">€15,99 <del>€29,90</del></div>
+          <button class="buy" onclick="addToCart('streetwear', 'Streetwear, Vestiti di Marca & Scarpe', 15.99)">
+            <span>Aggiungi al carrello</span>
+            <span>+ ↗</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- 3. SOLO SNEAKERS -->
+      <article class="product">
+        <div class="visual">
+          <div class="glow"></div>
+          <div class="cube">
+            SNK
+            <small>SNEAKERS</small>
+          </div>
+        </div>
+        <div class="pinfo">
+          <small>03 / DIRECTORY</small>
+          <h3>Solo Sneakers</h3>
+          <p>Fornitori specializzati esclusivamente in sneakers e scarpe sportive, con foto reali (QC), scatole originali e listini dettagliati.</p>
+          <div class="price">€9,99 <del>€19,90</del></div>
+          <button class="buy" onclick="addToCart('sneakers', 'Lista Fornitori Solo Sneakers', 9.99)">
+            <span>Aggiungi al carrello</span>
+            <span>+ ↗</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- 4. APPARECCHI ELETTRONICI -->
+      <article class="product">
+        <div class="visual">
+          <div class="glow"></div>
+          <div class="device">
+            <div class="screen">
+              TECH
+              <small>SUPPLIERS</small>
+            </div>
+          </div>
+        </div>
+        <div class="pinfo">
+          <small>04 / DIRECTORY</small>
+          <h3>Apparecchi Elettronici</h3>
+          <p>Contatti per auricolari wireless, smartwatch, accessori smartphone, console e piccoli dispositivi tech ad alto margine.</p>
+          <div class="price">€9,99 <del>€19,90</del></div>
+          <button class="buy" onclick="addToCart('tech', 'Lista Fornitori Apparecchi Elettronici', 9.99)">
+            <span>Aggiungi al carrello</span>
+            <span>+ ↗</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- 5. SOLO PROFUMI -->
+      <article class="product">
+        <div class="visual">
+          <div class="glow"></div>
+          <div class="cube">
+            PRF
+            <small>FRAGRANCES</small>
+          </div>
+        </div>
+        <div class="pinfo">
+          <small>05 / DIRECTORY</small>
+          <h3>Solo Profumi</h3>
+          <p>Fornitori di profumi di nicchia e fragranze designer sigillate, con codici batch verificabili e magazzini europei disponibili.</p>
+          <div class="price">€9,99 <del>€19,90</del></div>
+          <button class="buy" onclick="addToCart('profumi', 'Lista Fornitori Solo Profumi', 9.99)">
+            <span>Aggiungi al carrello</span>
+            <span>+ ↗</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- 6. SOLO SIGARETTE ELETTRONICHE -->
+      <article class="product">
+        <div class="visual">
+          <div class="glow"></div>
+          <div class="device">
+            <div class="screen">
+              VAPE
+              <small>DIRECT</small>
+            </div>
+          </div>
+        </div>
+        <div class="pinfo">
+          <small>06 / DIRECTORY</small>
+          <h3>Solo Sigarette Elettroniche</h3>
+          <p>Distributori e grossisti per dispositivi puff, pod mod e ricambi con prezzi all'ingrosso e spedizioni rapide in tutta Italia.</p>
+          <div class="price">€9,99 <del>€19,90</del></div>
+          <button class="buy" onclick="addToCart('vape', 'Lista Fornitori Solo Sigarette Elettroniche', 9.99)">
+            <span>Aggiungi al carrello</span>
+            <span>+ ↗</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- 7. SOLO LEGO -->
+      <article class="product">
+        <div class="visual">
+          <div class="glow"></div>
+          <div class="cube">
+            BRK
+            <small>BRICKS & SETS</small>
+          </div>
+        </div>
+        <div class="pinfo">
+          <small>07 / DIRECTORY</small>
+          <h3>Solo LEGO & Set Costruzioni</h3>
+          <p>Fornitori per set da collezione, edizioni Technic, minifigure e mattoncini compatibili ad alta richiesta sul mercato online.</p>
+          <div class="price">€9,99 <del>€19,90</del></div>
+          <button class="buy" onclick="addToCart('lego', 'Lista Fornitori Solo LEGO', 9.99)">
+            <span>Aggiungi al carrello</span>
+            <span>+ ↗</span>
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ANTEPRIMA CONTENUTO -->
+  <section class="preview-sec" id="anteprima">
+    <div class="sectiontag">02 — TRASPARENZA TOTALE</div>
+    <div class="sectionhead">
+      <h2>Cosa trovi<br><span>dentro i file.</span></h2>
+      <p>
+        Niente link scaduti o siti inutili. Ogni directory è organizzata<br>
+        in modo chiaro per farti contattare subito il fornitore giusto.
+      </p>
+    </div>
+
+    <div class="preview-box">
+      <div class="preview-header">
+        <span>ESTRATTO REALE · DIRECTORY DROPZONE</span>
+        <span class="pill">FORMATO PDF + GOOGLE SHEETS</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Fornitore</th>
+              <th>Categoria</th>
+              <th>Contatto Diretto</th>
+              <th>Spedizione IT/UE</th>
+              <th>Ordine Minimo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Supplier #01 — Shenzhen Direct</td>
+              <td>Sneakers & Streetwear</td>
+              <td class="blur-text">+86 138 4920 •••• (WhatsApp)</td>
+              <td>7–10 gg (Tax Free)</td>
+              <td>1 pezzo / Campione</td>
+            </tr>
+            <tr>
+              <td>Supplier #02 — EU Warehouse Hub</td>
+              <td>Profumi & Fragranze</td>
+              <td class="blur-text">@eu_fragrance_•••• (Telegram)</td>
+              <td>3–5 gg (Corriere UE)</td>
+              <td>5 pezzi</td>
+            </tr>
+            <tr>
+              <td>Supplier #03 — Huaqiangbei Tech</td>
+              <td>Elettronica & Audio</td>
+              <td class="blur-text">+86 185 7731 •••• (WeChat/WA)</td>
+              <td>6–9 gg (Express)</td>
+              <td>1 pezzo / Stock</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- COME FUNZIONA -->
+  <section class="how" id="come-funziona">
+    <div class="sectiontag">03 — SEMPLICE, VELOCE</div>
+    <h2>Acquisti in <span>3 step.</span></h2>
+    <div class="steps">
+      <div>
+        <b>01</b>
+        <div>
+          <h3>Scegli la lista</h3>
+          <p>Seleziona la singola categoria che ti interessa oppure risparmia con il Bundle Completo.</p>
+        </div>
+      </div>
+      <div>
+        <b>02</b>
+        <div>
+          <h3>Completa l'ordine</h3>
+          <p>Procedi al checkout sicuro in pochi secondi con carta, Apple Pay o Google Pay.</p>
+        </div>
+      </div>
+      <div>
+        <b>03</b>
+        <div>
+          <h3>Accesso immediato</h3>
+          <p>Ricevi subito i link e i file scaricabili per iniziare a contattare i fornitori.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="sectiontag">04 — FAQ</div>
+    <h2>Domande <span>frequenti.</span></h2>
+
+    <details>
+      <summary>Come ricevo il prodotto dopo l'acquisto? <span>＋</span></summary>
+      <p>Subito dopo la conferma del pagamento verrai reindirizzato alla pagina di download e riceverai una copia dei file direttamente via email, pronta all'uso 24/7.</p>
+    </details>
+
+    <details>
+      <summary>I fornitori accettano anche ordini singoli o solo all'ingrosso? <span>＋</span></summary>
+      <p>La maggior parte dei contatti inclusi permette di ordinare anche singoli pezzi (ideale per testare la qualità o lavorare in dropshipping/su ordinazione) oltre a offrire prezzi scalabili per stock.</p>
+    </details>
+
+    <details>
+      <summary>Come funziona la spedizione verso l'Italia? <span>＋</span></summary>
+      <p>Tutti i fornitori selezionati utilizzano linee di spedizione triangolate (Tax-Free) o magazzini europei, evitando blocchi doganali e tempi di attesa infiniti.</p>
+    </details>
+
+    <details>
+      <summary>Posso chiedere assistenza se ho dubbi su come contattarli? <span>＋</span></summary>
+      <p>Certo. All'interno della guida trovi anche i messaggi pronti (in inglese) da copiare e incollare su WhatsApp per negoziare subito i prezzi migliori, oltre al nostro contatto di supporto.</p>
+    </details>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="brand">
+      <div class="mark">D</div>
+      DROPZONE
+    </div>
+    <span>MORE THAN A SUPPLIER.</span>
+    <small>© 2026 DROPZONE · Prodotti digitali ad accesso immediato (non rimborsabili dopo il download).</small>
+  </footer>
+
+  <!-- CARRELLO LATERALE -->
+  <div class="cart-backdrop" id="cartBackdrop">
+    <div class="cart-panel">
+      <button class="cart-close" id="closeCartBtn" aria-label="Chiudi carrello">×</button>
+      <div class="eyebrow">IL TUO ORDINE</div>
+      <h2>Carrello <span>DROPZONE.</span></h2>
+
+      <div id="cartItems">
+        <p class="cart-empty">Il carrello è vuoto.</p>
+      </div>
+
+      <div class="cart-total">
+        <span>Totale</span>
+        <strong id="cartTotal">0,00 €</strong>
+      </div>
+
+      <button class="btn primary cart-checkout" id="checkoutBtn">
+        Procedi al checkout <b>↗</b>
+      </button>
+      <p class="cart-note">
+        Consegna digitale istantanea tramite link diretto ed email subito dopo il pagamento.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    let cart = [];
+
+    const cartBackdrop = document.getElementById('cartBackdrop');
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartItemsEl = document.getElementById('cartItems');
+    const cartTotalEl = document.getElementById('cartTotal');
+    const cartCountEl = document.getElementById('cartCount');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    // Apri / Chiudi Menu Mobile
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Apri / Chiudi Carrello
+    openCartBtn.addEventListener('click', () => cartBackdrop.classList.add('open'));
+    closeCartBtn.addEventListener('click', () => cartBackdrop.classList.remove('open'));
+    cartBackdrop.addEventListener('click', (e) => {
+      if (e.target === cartBackdrop) cartBackdrop.classList.remove('open');
+    });
+
+    // Aggiungi al carrello
+    function addToCart(id, name, price) {
+      const existing = cart.find(item => item.id === id);
+      if (!existing) {
+        cart.push({ id, name, price });
+      }
+      renderCart();
+      cartBackdrop.classList.add('open');
+    }
+
+    // Rimuovi dal carrello
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      renderCart();
+    }
+
+    // Aggiorna interfaccia carrello
+    function renderCart() {
+      cartCountEl.textContent = cart.length;
+
+      if (cart.length === 0) {
+        cartItemsEl.innerHTML = '<p class="cart-empty">Il carrello è vuoto.</p>';
+        cartTotalEl.textContent = '0,00 €';
+        return;
+      }
+
+      let total = 0;
+      cartItemsEl.innerHTML = cart.map(item => {
+        total += item.price;
+        return `
+          <div class="cart-row">
+            <div>
+              <strong>${item.name}</strong>
+              <small>${item.price.toFixed(2).replace('.', ',')} € · Accesso digitale</small>
+            </div>
+            <button class="remove" onclick="removeFromCart('${item.id}')">Rimuovi</button>
+          </div>
+        `;
+      }).join('');
+
+      cartTotalEl.textContent = total.toFixed(2).replace('.', ',') + ' €';
+    }
+
+    // Pulsante Checkout (da collegare poi ai tuoi link Stripe)
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('Aggiungi prima almeno una lista al carrello!');
+        return;
+      }
+      alert('Ottimo! Il totale è ' + cartTotalEl.textContent + '. Nel prossimo step collegheremo qui il tuo link di pagamento Stripe!');
+    });
+  </script>
+</body>
+</html>
