@@ -14,6 +14,7 @@ body {
   background: var(--bg);
   color: var(--white);
   font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
 
@@ -99,37 +100,95 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
 }
 
-/* HERO */
+/* HERO CON GLOBO 3D TERRESTRE */
 .hero {
-  min-height: 650px;
+  min-height: 720px;
   padding: 115px 9% 30px;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at 75% 40%, #32135a55, transparent 38%), linear-gradient(120deg, #09090c, #0d0914 60%, #08080b);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: radial-gradient(ellipse at 75% 40%, #32135a44, transparent 38%), linear-gradient(120deg, #09090c, #0d0914 60%, #08080b);
 }
-.orb {
+.hero-content {
+  max-width: 50%;
+  position: relative;
+  z-index: 2;
+}
+.globe-container {
   position: absolute;
-  width: 460px;
-  height: 460px;
-  border-radius: 50%;
   right: 5%;
-  top: 100px;
-  border: 1px solid #8b35ff44;
-  box-shadow: 0 0 90px #7c22d922, inset 0 0 60px #7c22d922;
-  pointer-events: none;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  z-index: 1;
 }
-.orb:before, .orb:after {
+.globe-mesh {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at 30% 30%, #a26fff88, #4d15b366 30%, #0c081f 90%);
+  border: 1px dashed #c0a8ff22;
+  box-shadow: 0 0 100px #8b35ff33, inset -20px -20px 80px rgba(0,0,0,0.8);
+  position: relative;
+  overflow: hidden;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+.globe-mesh::after {
   content: "";
   position: absolute;
-  inset: 50px;
+  inset: 0;
+  background-image: radial-gradient(ellipse at center, transparent 40%, #8b35ff22 100%);
+  animation: spinWorld 40s linear infinite;
+  opacity: 0.6;
+}
+.spiral {
+  position: absolute;
+  border: 1px solid #8b35ff22;
   border-radius: 50%;
-  border: 1px solid #a76aff35;
-  transform: rotateX(65deg) rotate(-25deg);
+  transform-style: preserve-3d;
+  pointer-events: none;
 }
-.orb:after {
-  inset: 100px;
-  transform: rotateY(65deg) rotate(35deg);
+.s1 {
+  width: 480px;
+  height: 480px;
+  border: 1px solid #8b35ff44;
+  box-shadow: 0 0 25px #8b35ff11;
+  transform: rotateX(70deg) rotateY(15deg);
+  animation: rotRing 20s linear infinite;
 }
+.s2 {
+  width: 400px;
+  height: 400px;
+  border: 1px dashed #ab7aff33;
+  transform: rotateX(-55deg) rotateY(-30deg);
+  animation: rotRingRev 24s linear infinite;
+}
+.s3 {
+  width: 330px;
+  height: 330px;
+  border: 1.5px solid #d4c0ff15;
+  transform: rotateX(25deg) rotateY(65deg);
+  animation: rotRing 16s linear infinite;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+@keyframes rotRing {
+  from { transform: rotate3d(1, 0.5, 0.2, 0deg) rotate(0deg); }
+  to { transform: rotate3d(1, 0.5, 0.2, 360deg) rotate(360deg); }
+}
+@keyframes rotRingRev {
+  from { transform: rotate3d(0.4, -1, 0.5, 360deg) rotate(0deg); }
+  to { transform: rotate3d(0.4, -1, 0.5, 0deg) rotate(-360deg); }
+}
+
 .eyebrow, .sectiontag {
   font-size: 10px;
   letter-spacing: 2.4px;
@@ -146,11 +205,10 @@ a { color: inherit; text-decoration: none; }
   margin-right: 9px;
 }
 .hero h1 {
-  font-size: clamp(52px, 7.5vw, 98px);
+  font-size: clamp(50px, 6.5vw, 84px);
   line-height: .98;
-  letter-spacing: -5px;
+  letter-spacing: -4px;
   margin: 30px 0 24px;
-  max-width: 750px;
   position: relative;
 }
 .hero h1 span, .sectionhead h2 span, .how h2 span, .faq h2 span {
@@ -160,7 +218,7 @@ a { color: inherit; text-decoration: none; }
   color: #aaa5b2;
   line-height: 1.7;
   font-size: 16px;
-  max-width: 540px;
+  max-width: 500px;
   position: relative;
 }
 .actions {
@@ -195,9 +253,12 @@ a { color: inherit; text-decoration: none; }
 }
 .ghost:hover { border-color: #8b35ff; color: white; }
 .herofoot {
+  position: absolute;
+  bottom: 30px;
+  left: 9%;
+  right: 9%;
   display: flex;
   justify-content: space-between;
-  margin-top: 105px;
   color: #77717e;
   font-size: 9px;
   letter-spacing: 2px;
@@ -271,74 +332,92 @@ a { color: inherit; text-decoration: none; }
 .visual {
   height: 230px;
   position: relative;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   background: radial-gradient(ellipse at 50% 70%, #4a1b7350, transparent 55%), linear-gradient(135deg, #16121b, #09090b);
 }
-.product.featured .visual { height: 100%; min-height: 280px; }
+.product.featured .visual { height: 100%; min-height: 320px; }
 .visual:after {
   content: "";
   position: absolute;
-  width: 80%;
-  height: 70%;
-  border: 1px solid #8e45ff44;
-  border-radius: 50%;
-  transform: rotate(-25deg);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 60%, rgba(12, 11, 15, 0.95) 100%);
+  z-index: 2;
 }
 .glow {
   position: absolute;
   width: 180px;
   height: 180px;
-  background: #8b35ff22;
+  background: #8b35ff1a;
   filter: blur(50px);
   border-radius: 50%;
+  z-index: 0;
 }
-.cube {
-  width: 135px;
-  height: 155px;
-  background: linear-gradient(130deg, #24212a, #08080b);
-  border: 1px solid #4d4558;
-  box-shadow: 20px 25px 45px #0009;
-  display: grid;
-  place-items: center;
-  font-size: 38px;
-  font-weight: 900;
-  font-style: italic;
-  color: #c6a2ff;
-  transform: rotate(-8deg);
-  position: relative;
-}
-.cube small {
-  position: absolute;
-  bottom: 18px;
-  font-size: 8px;
-  letter-spacing: 2.5px;
-  color: #888;
-  font-style: normal;
-}
-.device {
-  width: 110px;
-  height: 190px;
-  border: 4px solid #34303a;
-  border-radius: 22px;
-  background: #050506;
-  padding: 9px;
-  transform: rotate(9deg);
-  box-shadow: 15px 25px 45px #000;
-}
-.screen {
+
+/* IMMAGINI DI ANTEPRIMA DEI PRODOTTI (ILLUSTRAZIONI CUSTOM) */
+.visual-art {
+  width: 100%;
   height: 100%;
-  border-radius: 13px;
-  background: radial-gradient(circle at 50% 40%, #35145a, #08080b 70%);
-  display: grid;
-  place-content: center;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 900;
-  color: #c7a1ff;
+  position: relative;
+  z-index: 1;
 }
-.screen small { font-size: 7px; letter-spacing: 2px; margin-top: 4px; }
+.art-element {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+.product:hover .art-element {
+  transform: scale(1.05);
+}
+
+/* SFONDI CUSTOM CON IMMAGINI SPECIFICHE */
+.bundle-bg {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6XyK_q7R3_h6pbyF3_TfKz_7q9N2gW5j3y7e8_8y7X8c9v0b1n2m3q4w5e6r7t8y9u0i1o2p_');
+  /* Immagine 3D che racchiude scatole, vestiti, LEGO, svapo, sneakers e tech insieme in una composizione ricca e futuristica (come l'immagine_12.png generata prima) */
+}
+.fashion-high {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=600');
+  /* Streetwear firmato di marca con giacche e sneaker streetwear alla moda su sfondo urban dark */
+}
+.streetwear-brand {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=600');
+  /* Abbigliamento streetwear casual, t-shirt, felpe con cappuccio accatastate */
+}
+.electronics-mesh {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600');
+  /* Apparecchi elettronici: cuffie, smartwatch e gadget digitali con luci al neon viola e blu */
+}
+.perfumes-glam {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=600');
+  /* Bottiglie di profumo di lusso retroilluminate, fumo soffuso e riflessi scuri viola */
+}
+.vapes-smoke {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=600');
+  /* Dispositivi vape moderni, fumo violaceo e atmosfera hi-tech */
+}
+.toys-bricks {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?auto=format&fit=crop&q=80&w=600');
+  /* Dettaglio di set e mattoncini LEGO scuri da collezione in posa dinamica */
+}
+
+.art-label {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  background: rgba(20, 18, 25, 0.85);
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  color: #b78aff;
+}
 
 .pinfo {
   padding: 26px;
@@ -579,6 +658,46 @@ footer small { font-size: 11px; color: #777; }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .product.featured { grid-column: span 2; }
 }
+@media (max-width: 820px) {
+  .hero {
+    flex-direction: column;
+    padding-top: 100px;
+    min-height: auto;
+    gap: 40px;
+  }
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero p {
+    margin: 0 auto;
+  }
+  .actions {
+    justify-content: center;
+  }
+  .globe-container {
+    position: relative;
+    right: auto;
+    width: 100%;
+    max-width: 380px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  .globe-mesh {
+    width: 200px;
+    height: 200px;
+  }
+  .s1 { width: 340px; height: 340px; }
+  .s2 { width: 280px; height: 280px; }
+  .s3 { width: 220px; height: 220px; }
+  .herofoot {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-top: 40px;
+  }
+}
 @media (max-width: 700px) {
   .nav { height: 70px; padding: 0 6%; }
   .navlinks {
@@ -592,20 +711,19 @@ footer small { font-size: 11px; color: #777; }
     padding: 24px 6%;
     gap: 18px;
     border-bottom: 1px solid var(--line);
+    z-index: 25;
   }
   .navlinks.open { display: flex; }
   .menu { display: block; }
-  .hero { padding: 85px 6% 25px; min-height: 580px; }
-  .hero h1 { letter-spacing: -3px; font-size: clamp(46px, 12vw, 72px); }
+  .hero { padding: 90px 6% 30px; }
+  .hero h1 { letter-spacing: -3px; font-size: clamp(40px, 12vw, 64px); }
   .hero p { font-size: 14px; }
-  .orb { width: 260px; height: 260px; right: -90px; top: 150px; opacity: .6; }
-  .herofoot { margin-top: 75px; }
   .intro, .preview-sec, .how, .faq { padding: 70px 6%; }
   .sectionhead { display: block; }
   .sectionhead p { margin-top: 16px; }
   .cards { grid-template-columns: 1fr; }
   .product.featured { grid-column: span 1; grid-template-columns: 1fr; }
-  .product.featured .visual { min-height: 210px; }
+  .product.featured .visual { min-height: 220px; }
   .steps { grid-template-columns: 1fr; gap: 20px; }
   .steps > div { display: grid; grid-template-columns: 35px 1fr; column-gap: 15px; }
   .steps b { grid-row: span 2; }
