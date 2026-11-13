@@ -309,7 +309,7 @@ a { color: inherit; text-decoration: none; }
   z-index: 0;
 }
 
-/* CARDS CON DESIGN CUSTOM RICHIESTO (Utilizzo della griglia carte.png) */
+/* CARDS CON DESIGN CUSTOM RICHIESTO (Griglia 3 sopra, 4 sotto) */
 .visual-art {
   width: 100%;
   height: 100%;
@@ -319,22 +319,24 @@ a { color: inherit; text-decoration: none; }
 .art-element {
   width: 100%;
   height: 100%;
-  background-image: url('carte.png');
-  background-size: 300% 300%; /* Gestisce la griglia 3x3 delle immagini */
+  background-image: url('carte.png.jpeg');
+  background-repeat: no-repeat;
   transition: transform 0.5s ease;
 }
 .product:hover .art-element {
   transform: scale(1.03);
 }
 
-/* Coordinate per ritagliare ogni singola carta dalla griglia carte.png */
-.fashion-high { background-position: 0% 0%; }        /* Card 1: Abbigliamento e scarpe */
-.streetwear-brand { background-position: 50% 0%; }     /* Card 2: Streetwear */
-.electronics-mesh { background-position: 100% 0%; }     /* Card 3: Elettronica */
-.perfumes-glam { background-position: 0% 50%; }        /* Card 4: Profumi */
-.vapes-smoke { background-position: 50% 50%; }         /* Card 5: Svapo */
-.toys-bricks { background-position: 100% 50%; }        /* Card 6: Lego */
-.bundle-bg { background-position: 100% 100%; background-size: 300% 300%; } /* Card 7: Bundle */
+/* Fila in alto (3 riquadri -> larghezza 300%, altezza 200%) */
+.fashion-high     { background-size: 300% 200%; background-position: 0% 0%; }
+.streetwear-brand { background-size: 300% 200%; background-position: 50% 0%; }
+.electronics-mesh { background-size: 300% 200%; background-position: 100% 0%; }
+
+/* Fila in basso (4 riquadri -> larghezza 400%, altezza 200%) */
+.perfumes-glam    { background-size: 400% 200%; background-position: 0% 100%; }
+.vapes-smoke      { background-size: 400% 200%; background-position: 33.33% 100%; }
+.toys-bricks      { background-size: 400% 200%; background-position: 66.66% 100%; }
+.bundle-bg        { background-size: 400% 200%; background-position: 100% 100%; }
 
 .art-label {
   position: absolute;
