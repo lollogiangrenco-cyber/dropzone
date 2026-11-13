@@ -309,34 +309,41 @@ a { color: inherit; text-decoration: none; }
   z-index: 0;
 }
 
-/* CARDS CON DESIGN CUSTOM RICHIESTO (Griglia 3 sopra, 4 sotto) */
+/* CARDS CON DESIGN CUSTOM RICHIESTO (Centratura perfetta su griglia 3 sopra, 4 sotto) */
+.visual {
+  background: #09080d;
+}
 .visual-art {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 .art-element {
-  width: 100%;
-  height: 100%;
+  position: absolute;
   background-image: url('carte.png.jpeg');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 .product:hover .art-element {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-/* Fila in alto (3 riquadri -> larghezza 300%, altezza 200%) */
-.fashion-high     { background-size: 300% 200%; background-position: 0% 0%; }
-.streetwear-brand { background-size: 300% 200%; background-position: 50% 0%; }
-.electronics-mesh { background-size: 300% 200%; background-position: 100% 0%; }
+/* Fila in alto (3 riquadri: ciascuno largo 1/3 e alto 1/2 dell'immagine) */
+.fashion-high     { width: 300%; height: 200%; left: 0%;    top: 0%; }
+.streetwear-brand { width: 300%; height: 200%; left: -100%; top: 0%; }
+.electronics-mesh { width: 300%; height: 200%; left: -200%; top: 0%; }
 
-/* Fila in basso (4 riquadri con margini calibrati) */
-.perfumes-glam    { background-size: 415% 205%; background-position: 0.5% 99.5%; }
-.vapes-smoke      { background-size: 415% 205%; background-position: 33.5% 99.5%; }
-.toys-bricks      { background-size: 415% 205%; background-position: 66.5% 99.5%; }
-.bundle-bg        { background-size: 415% 205%; background-position: 99.5% 99.5%; }
+/* Fila in basso (4 riquadri: ciascuno largo 1/4 e alto 1/2 dell'immagine) */
+.perfumes-glam    { width: 400%; height: 200%; left: 0%;    top: -100%; }
+.vapes-smoke      { width: 400%; height: 200%; left: -100%; top: -100%; }
+.toys-bricks      { width: 400%; height: 200%; left: -200%; top: -100%; }
+.bundle-bg        { width: 400%; height: 200%; left: -300%; top: -100%; }
 
 .art-label {
   position: absolute;
