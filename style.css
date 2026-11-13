@@ -309,8 +309,9 @@ a { color: inherit; text-decoration: none; }
   z-index: 0;
 }
 
-/* CARDS CON DESIGN CUSTOM RICHIESTO (Centratura perfetta su griglia 3 sopra, 4 sotto) */
+/* CARDS CON DESIGN CUSTOM CENTRATO AL 100% */
 .visual {
+  height: 270px;
   background: #09080d;
 }
 .visual-art {
@@ -318,32 +319,18 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
 }
 .art-element {
-  position: absolute;
-  background-image: url('carte.png.jpeg');
-  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   transition: transform 0.4s ease;
 }
 .product:hover .art-element {
   transform: scale(1.04);
 }
-
-/* Fila in alto (3 riquadri: ciascuno largo 1/3 e alto 1/2 dell'immagine) */
-.fashion-high     { width: 300%; height: 200%; left: 0%;    top: 0%; }
-.streetwear-brand { width: 300%; height: 200%; left: -100%; top: 0%; }
-.electronics-mesh { width: 300%; height: 200%; left: -200%; top: 0%; }
-
-/* Fila in basso (4 riquadri: ciascuno largo 1/4 e alto 1/2 dell'immagine) */
-.perfumes-glam    { width: 400%; height: 200%; left: 0%;    top: -100%; }
-.vapes-smoke      { width: 400%; height: 200%; left: -100%; top: -100%; }
-.toys-bricks      { width: 400%; height: 200%; left: -200%; top: -100%; }
-.bundle-bg        { width: 400%; height: 200%; left: -300%; top: -100%; }
 
 .art-label {
   position: absolute;
