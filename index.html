@@ -382,7 +382,42 @@
         return;
       }
       alert('Ottimo! Il totale è ' + cartTotalEl.textContent + '. Nel prossimo step collegheremo qui il tuo link di pagamento Stripe!');
+    }); alert('Ottimo! Il totale è ' + cartTotalEl.textContent + '. Nel prossimo step collegheremo qui il tuo link di pagamento Stripe!');
     });
+
+    // Ritaglio automatico al pixel delle 7 card da carte.png.jpeg
+    window.addEventListener('load', () => {
+      const img = new Image();
+      img.src = 'carte.png.jpeg';
+      img.onload = () => {
+        const w = img.width;
+        const h = img.height;
+        const halfH = h / 2;
+
+        const crops = {
+          'fashion-high':     [0,           0,     w / 3, halfH],
+          'streetwear-brand': [w / 3,       0,     w / 3, halfH],
+          'electronics-mesh': [(w / 3) * 2, 0,     w / 3, halfH],
+          'perfumes-glam':    [0,           halfH, w / 4, halfH],
+          'vapes-smoke':      [w / 4,       halfH, w / 4, halfH],
+          'toys-bricks':      [(w / 4) * 2, halfH, w / 4, halfH],
+          'bundle-bg':        [(w / 4) * 3, halfH, w / 4, halfH]
+        };
+
+        Object.entries(crops).forEach(([className, [sx, sy, sw, sh]]) => {
+          const el = document.querySelector('.' + className);
+          if (!el) return;
+          const canvas = document.createElement('canvas');
+          canvas.width = sw;
+          canvas.height = sh;
+          canvas.getContext('2d').drawImage(img, sx, sy, sw, sh, 0, 0, sw, sh);
+          el.style.backgroundImage = `url(${canvas.toDataURL()})`;
+        });
+      };
+    });
+  </script>
+</body>
+</html>
   </script>
 </body>
 </html>
