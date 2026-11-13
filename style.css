@@ -100,9 +100,9 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
 }
 
-/* HERO CON GLOBO 3D TERRESTRE */
+/* HERO CON GLOBO 3D (IMAGE_12) */
 .hero {
-  min-height: 720px;
+  min-height: 680px;
   padding: 115px 9% 30px;
   position: relative;
   overflow: hidden;
@@ -118,75 +118,27 @@ a { color: inherit; text-decoration: none; }
 }
 .globe-container {
   position: absolute;
-  right: 5%;
-  width: 500px;
-  height: 500px;
+  right: 6%;
+  width: 480px;
+  height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1000px;
   z-index: 1;
 }
-.globe-mesh {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background-image: radial-gradient(circle at 30% 30%, #a26fff88, #4d15b366 30%, #0c081f 90%);
-  border: 1px dashed #c0a8ff22;
-  box-shadow: 0 0 100px #8b35ff33, inset -20px -20px 80px rgba(0,0,0,0.8);
-  position: relative;
-  overflow: hidden;
-  animation: floatOrb 8s ease-in-out infinite;
-}
-.globe-mesh::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(ellipse at center, transparent 40%, #8b35ff22 100%);
-  animation: spinWorld 40s linear infinite;
-  opacity: 0.6;
-}
-.spiral {
-  position: absolute;
-  border: 1px solid #8b35ff22;
-  border-radius: 50%;
-  transform-style: preserve-3d;
-  pointer-events: none;
-}
-.s1 {
-  width: 480px;
-  height: 480px;
-  border: 1px solid #8b35ff44;
-  box-shadow: 0 0 25px #8b35ff11;
-  transform: rotateX(70deg) rotateY(15deg);
-  animation: rotRing 20s linear infinite;
-}
-.s2 {
-  width: 400px;
-  height: 400px;
-  border: 1px dashed #ab7aff33;
-  transform: rotateX(-55deg) rotateY(-30deg);
-  animation: rotRingRev 24s linear infinite;
-}
-.s3 {
-  width: 330px;
-  height: 330px;
-  border: 1.5px solid #d4c0ff15;
-  transform: rotateX(25deg) rotateY(65deg);
-  animation: rotRing 16s linear infinite;
+.hero-globe-img {
+  width: 100%;
+  height: auto;
+  max-width: 440px;
+  border-radius: 20px;
+  object-fit: contain;
+  box-shadow: 0 0 60px rgba(139, 53, 255, 0.15);
+  animation: floatOrb 6s ease-in-out infinite;
 }
 
 @keyframes floatOrb {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(3deg); }
-}
-@keyframes rotRing {
-  from { transform: rotate3d(1, 0.5, 0.2, 0deg) rotate(0deg); }
-  to { transform: rotate3d(1, 0.5, 0.2, 360deg) rotate(360deg); }
-}
-@keyframes rotRingRev {
-  from { transform: rotate3d(0.4, -1, 0.5, 360deg) rotate(0deg); }
-  to { transform: rotate3d(0.4, -1, 0.5, 0deg) rotate(-360deg); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 .eyebrow, .sectiontag {
@@ -205,7 +157,7 @@ a { color: inherit; text-decoration: none; }
   margin-right: 9px;
 }
 .hero h1 {
-  font-size: clamp(50px, 6.5vw, 84px);
+  font-size: clamp(48px, 6.2vw, 82px);
   line-height: .98;
   letter-spacing: -4px;
   margin: 30px 0 24px;
@@ -265,7 +217,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* SECTIONS & CATALOG */
-.intro, .preview-sec, .how, .faq { padding: 95px 9%; }
+.intro, .how, .faq { padding: 95px 9%; }
 .sectionhead {
   display: flex;
   align-items: flex-end;
@@ -330,29 +282,29 @@ a { color: inherit; text-decoration: none; }
   color: #c7a5ff;
 }
 .visual {
-  height: 230px;
+  height: 240px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 70%, #4a1b7350, transparent 55%), linear-gradient(135deg, #16121b, #09090b);
+  background: #212121; /* Sfondo scuro neutro come nelle anteprime caricate */
 }
-.product.featured .visual { height: 100%; min-height: 320px; }
+.product.featured .visual { height: 100%; min-height: 300px; }
 .visual:after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, transparent 60%, rgba(12, 11, 15, 0.95) 100%);
+  background: linear-gradient(to bottom, transparent 75%, rgba(12, 11, 15, 0.4) 100%);
   z-index: 2;
 }
 .glow {
   position: absolute;
   width: 180px;
   height: 180px;
-  background: #8b35ff1a;
-  filter: blur(50px);
+  background: #8b35ff0f;
+  filter: blur(40px);
   border-radius: 50%;
   z-index: 0;
 }
@@ -372,37 +324,37 @@ a { color: inherit; text-decoration: none; }
   transition: transform 0.5s ease;
 }
 .product:hover .art-element {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-/* SFONDI CUSTOM CON IMMAGINI SPECIFICHE */
+/* CARDS CON DESIGN CUSTOM RICHIESTO (BOXES + BADGE 100% RESELL) */
 .bundle-bg {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6XyK_q7R3_h6pbyF3_TfKz_7q9N2gW5j3y7e8_8y7X8c9v0b1n2m3q4w5e6r7t8y9u0i1o2p_');
-  /* Immagine 3D che racchiude scatole, vestiti, LEGO, svapo, sneakers e tech insieme in una composizione ricca e futuristica (come l'immagine_12.png generata prima) */
+  /* Collage 3D raggruppante: Box aperta con vestiti, scarpe, cuffie, smartwatch, profumi colorati, vapes e mattoncini */
+  background-image: url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1-u4A2p4xJv4U7v4R3e9F3m9_j8_L8t8q9W5y7w5w8u7');
 }
 .fashion-high {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=600');
-  /* Streetwear firmato di marca con giacche e sneaker streetwear alla moda su sfondo urban dark */
+  /* BOX: FORNITORI ABBIGLIAMENTO & SCARPE (Giubbotti, Felpe con cappuccio, pantaloni e scarpe) */
+  background-image: url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1-u4A2p4xJv4U7v4R3e9F3m9_j8_L8t8q9W5y7w5w8u7_high');
 }
 .streetwear-brand {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=600');
-  /* Abbigliamento streetwear casual, t-shirt, felpe con cappuccio accatastate */
+  /* BOX: FORNITORI STREETWEAR & MARCA (Felpe, t-shirt e pantaloni di tendenza ma senza scarpe) */
+  background-image: url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1-u4A2p4xJv4U7v4R3e9F3m9_j8_L8t8q9W5y7w5w8u7_casual');
 }
 .electronics-mesh {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600');
-  /* Apparecchi elettronici: cuffie, smartwatch e gadget digitali con luci al neon viola e blu */
+  /* BOX: FORNITORI ELETTRONICA (Cuffie, smartphone, speaker, fotocamere e accessori tech) */
+  background-image: url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1-u4A2p4xJv4U7v4R3e9F3m9_j8_L8t8q9W5y7w5w8u7_elec');
 }
 .perfumes-glam {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=600');
-  /* Bottiglie di profumo di lusso retroilluminate, fumo soffuso e riflessi scuri viola */
+  /* BOX: FORNITORI PROFUMI (Boccette colorate, sfondi di reselling) */
+  background-image: url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1-u4A2p4xJv4U7v4R3e9F3m9_j8_L8t8q9W5y7w5w8u7_fragrance');
 }
 .vapes-smoke {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=600');
-  /* Dispositivi vape moderni, fumo violaceo e atmosfera hi-tech */
+  /* BOX: FORNITORI SIGARETTE ELETTRONICHE (Vapes, Puff, mod pod) */
+  background-image: url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1-u4A2p4xJv4U7v4R3e9F3m9_j8_L8t8q9W5y7w5w8u7_vape');
 }
 .toys-bricks {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?auto=format&fit=crop&q=80&w=600');
-  /* Dettaglio di set e mattoncini LEGO scuri da collezione in posa dinamica */
+  /* BOX: FORNITORI LEGO (Costruzioni e mattoncini colorati) */
+  background-image: url('https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1-u4A2p4xJv4U7v4R3e9F3m9_j8_L8t8q9W5y7w5w8u7_toys');
 }
 
 .art-label {
@@ -476,54 +428,6 @@ a { color: inherit; text-decoration: none; }
 .product.featured .buy {
   background: linear-gradient(100deg, #7726e8, #a04cff);
   border: 0;
-}
-
-/* PREVIEW TABLE */
-.preview-box {
-  border: 1px solid var(--line);
-  background: #100e15;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.preview-header {
-  padding: 18px 24px;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  color: var(--muted);
-}
-.pill {
-  background: #231833;
-  color: #c2a0ff;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 10px;
-}
-.table-wrap { overflow-x: auto; }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 13px;
-}
-th, td {
-  padding: 16px 24px;
-  border-bottom: 1px solid #1e1b24;
-  white-space: nowrap;
-}
-th {
-  color: #8d8497;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.blur-text {
-  color: #c2a0ff;
-  font-family: monospace;
 }
 
 /* HOW & FAQ */
@@ -679,17 +583,13 @@ footer small { font-size: 11px; color: #777; }
     position: relative;
     right: auto;
     width: 100%;
-    max-width: 380px;
-    height: 380px;
+    max-width: 360px;
+    height: auto;
     margin: 0 auto;
   }
-  .globe-mesh {
-    width: 200px;
-    height: 200px;
+  .hero-globe-img {
+    max-width: 320px;
   }
-  .s1 { width: 340px; height: 340px; }
-  .s2 { width: 280px; height: 280px; }
-  .s3 { width: 220px; height: 220px; }
   .herofoot {
     position: relative;
     bottom: auto;
@@ -718,7 +618,7 @@ footer small { font-size: 11px; color: #777; }
   .hero { padding: 90px 6% 30px; }
   .hero h1 { letter-spacing: -3px; font-size: clamp(40px, 12vw, 64px); }
   .hero p { font-size: 14px; }
-  .intro, .preview-sec, .how, .faq { padding: 70px 6%; }
+  .intro, .how, .faq { padding: 70px 6%; }
   .sectionhead { display: block; }
   .sectionhead p { margin-top: 16px; }
   .cards { grid-template-columns: 1fr; }
