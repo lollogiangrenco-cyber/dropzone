@@ -35,17 +35,27 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="orb"></div>
-    <div class="eyebrow"><i></i>DIGITAL RESOURCES · ACCESSO IMMEDIATO</div>
-    <h1>Il tuo prossimo<br><span>business</span> inizia<br>da qui.</h1>
-    <p>
-      Fornitori verificati, contatti diretti e listini selezionati per reselling.<br>
-      Nessun intermediario, spedizioni rapide in Europa, tutto in un unico posto.
-    </p>
-    <div class="actions">
-      <a href="#prodotti" class="btn primary">Esplora le liste <b>↗</b></a>
-      <a href="#anteprima" class="btn ghost">Vedi anteprima</a>
+    <div class="hero-content">
+      <div class="eyebrow"><i></i>DIGITAL RESOURCES · ACCESSO IMMEDIATO</div>
+      <h1>Il tuo prossimo<br><span>business</span> inizia<br>da qui.</h1>
+      <p>
+        Fornitori verificati, contatti diretti e listini selezionati per reselling.<br>
+        Nessun intermediario, spedizioni rapide in Europa, tutto in un unico posto.
+      </p>
+      <div class="actions">
+        <a href="#prodotti" class="btn primary">Esplora le liste <b>↗</b></a>
+        <a href="#anteprima" class="btn ghost">Vedi anteprima</a>
+      </div>
     </div>
+    
+    <!-- GLOBO TERRESTRE CON ORBITE -->
+    <div class="globe-container">
+      <div class="spiral s1"></div>
+      <div class="spiral s2"></div>
+      <div class="spiral s3"></div>
+      <div class="globe-mesh"></div>
+    </div>
+    
     <div class="herofoot">
       <span>01 / DIGITAL STORE</span>
       <span>SCROLL TO EXPLORE ↓</span>
@@ -70,9 +80,9 @@
         <div class="badge">BEST SELLER · RISPARMIA 40€</div>
         <div class="visual">
           <div class="glow"></div>
-          <div class="cube">
-            ALL
-            <small>FULL ACCESS</small>
+          <div class="visual-art">
+            <div class="art-element bundle-bg"></div>
+            <div class="art-label">ALL IN ONE</div>
           </div>
         </div>
         <div class="pinfo">
@@ -87,14 +97,13 @@
         </div>
       </article>
 
-      <!-- 2. STREETWEAR, VESTITI DI MARCA E SCARPE -->
+      <!-- 2. STREETWEAR, VESTITI DI MARCA E SCARPE (15.99) -->
       <article class="product">
         <div class="badge muted">TOP CHOICE</div>
         <div class="visual">
           <div class="glow"></div>
-          <div class="cube">
-            DZ
-            <small>FASHION & SHOES</small>
+          <div class="visual-art">
+            <div class="art-element fashion-high"></div>
           </div>
         </div>
         <div class="pinfo">
@@ -102,28 +111,27 @@
           <h3>Streetwear, Vestiti di Marca & Scarpe</h3>
           <p>Contatti diretti per abbigliamento streetwear, brand luxury, tute, giubbotti e calzature di tendenza con spedizione veloce.</p>
           <div class="price">€15,99 <del>€29,90</del></div>
-          <button class="buy" onclick="addToCart('streetwear', 'Streetwear, Vestiti di Marca & Scarpe', 15.99)">
+          <button class="buy" onclick="addToCart('streetwear_luxury', 'Streetwear, Vestiti di Marca & Scarpe', 15.99)">
             <span>Aggiungi al carrello</span>
             <span>+ ↗</span>
           </button>
         </div>
       </article>
 
-      <!-- 3. SOLO SNEAKERS -->
+      <!-- 3. STREETWEAR E VESTITI DI MARCA (9.99) -->
       <article class="product">
         <div class="visual">
           <div class="glow"></div>
-          <div class="cube">
-            SNK
-            <small>SNEAKERS</small>
+          <div class="visual-art">
+            <div class="art-element streetwear-brand"></div>
           </div>
         </div>
         <div class="pinfo">
           <small>03 / DIRECTORY</small>
-          <h3>Solo Sneakers</h3>
-          <p>Fornitori specializzati esclusivamente in sneakers e scarpe sportive, con foto reali (QC), scatole originali e listini dettagliati.</p>
+          <h3>Streetwear & Vestiti di Marca</h3>
+          <p>Fornitori specializzati in abbigliamento urban di marca, felpe, t-shirt e pantaloni tra i più venduti e ricercati del momento.</p>
           <div class="price">€9,99 <del>€19,90</del></div>
-          <button class="buy" onclick="addToCart('sneakers', 'Lista Fornitori Solo Sneakers', 9.99)">
+          <button class="buy" onclick="addToCart('streetwear_casual', 'Streetwear & Vestiti di Marca', 9.99)">
             <span>Aggiungi al carrello</span>
             <span>+ ↗</span>
           </button>
@@ -134,11 +142,8 @@
       <article class="product">
         <div class="visual">
           <div class="glow"></div>
-          <div class="device">
-            <div class="screen">
-              TECH
-              <small>SUPPLIERS</small>
-            </div>
+          <div class="visual-art">
+            <div class="art-element electronics-mesh"></div>
           </div>
         </div>
         <div class="pinfo">
@@ -157,9 +162,8 @@
       <article class="product">
         <div class="visual">
           <div class="glow"></div>
-          <div class="cube">
-            PRF
-            <small>FRAGRANCES</small>
+          <div class="visual-art">
+            <div class="art-element perfumes-glam"></div>
           </div>
         </div>
         <div class="pinfo">
@@ -178,11 +182,8 @@
       <article class="product">
         <div class="visual">
           <div class="glow"></div>
-          <div class="device">
-            <div class="screen">
-              VAPE
-              <small>DIRECT</small>
-            </div>
+          <div class="visual-art">
+            <div class="art-element vapes-smoke"></div>
           </div>
         </div>
         <div class="pinfo">
@@ -201,9 +202,8 @@
       <article class="product">
         <div class="visual">
           <div class="glow"></div>
-          <div class="cube">
-            BRK
-            <small>BRICKS & SETS</small>
+          <div class="visual-art">
+            <div class="art-element toys-bricks"></div>
           </div>
         </div>
         <div class="pinfo">
@@ -445,4 +445,3 @@
   </script>
 </body>
 </html>
-    n
