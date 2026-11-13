@@ -309,28 +309,42 @@ a { color: inherit; text-decoration: none; }
   z-index: 0;
 }
 
-/* CARDS CON DESIGN CUSTOM CENTRATO AL 100% */
+/* CARDS CON DESIGN CUSTOM CENTRATO E INTERO */
 .visual {
-  height: 270px;
+  height: 280px;
   background: #09080d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 .visual-art {
-  width: 100%;
-  height: 100%;
+  width: 280px;
+  height: 280px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 .art-element {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-position: center;
+  position: absolute;
+  background-image: url('carte.png.jpeg');
   background-repeat: no-repeat;
   transition: transform 0.4s ease;
 }
 .product:hover .art-element {
   transform: scale(1.04);
 }
+
+/* Fila in alto (3 riquadri quadrati: larghezza 300%, altezza 200%) */
+.fashion-high     { width: 300%; height: 200%; left: 0%;    top: 0%; background-size: 100% 100%; }
+.streetwear-brand { width: 300%; height: 200%; left: -100%; top: 0%; background-size: 100% 100%; }
+.electronics-mesh { width: 300%; height: 200%; left: -200%; top: 0%; background-size: 100% 100%; }
+
+/* Fila in basso (4 riquadri: larghezza 400%, altezza 200%) */
+.perfumes-glam    { width: 400%; height: 200%; left: 0%;    top: -100%; background-size: 100% 100%; }
+.vapes-smoke      { width: 400%; height: 200%; left: -100%; top: -100%; background-size: 100% 100%; }
+.toys-bricks      { width: 400%; height: 200%; left: -200%; top: -100%; background-size: 100% 100%; }
+.bundle-bg        { width: 400%; height: 200%; left: -300%; top: -100%; background-size: 100% 100%; }
 
 .art-label {
   position: absolute;
