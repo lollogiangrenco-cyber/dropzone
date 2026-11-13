@@ -332,11 +332,11 @@ a { color: inherit; text-decoration: none; }
 .streetwear-brand { background-size: 300% 200%; background-position: 50% 0%; }
 .electronics-mesh { background-size: 300% 200%; background-position: 100% 0%; }
 
-/* Fila in basso (4 riquadri -> larghezza 400%, altezza 200%) */
-.perfumes-glam    { background-size: 400% 200%; background-position: 0% 100%; }
-.vapes-smoke      { background-size: 400% 200%; background-position: 33.33% 100%; }
-.toys-bricks      { background-size: 400% 200%; background-position: 66.66% 100%; }
-.bundle-bg        { background-size: 400% 200%; background-position: 100% 100%; }
+/* Fila in basso (4 riquadri con margini calibrati) */
+.perfumes-glam    { background-size: 415% 205%; background-position: 0.5% 99.5%; }
+.vapes-smoke      { background-size: 415% 205%; background-position: 33.5% 99.5%; }
+.toys-bricks      { background-size: 415% 205%; background-position: 66.5% 99.5%; }
+.bundle-bg        { background-size: 415% 205%; background-position: 99.5% 99.5%; }
 
 .art-label {
   position: absolute;
