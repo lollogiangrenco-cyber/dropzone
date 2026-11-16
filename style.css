@@ -310,24 +310,22 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* CARDS CON DESIGN CUSTOM CENTRATO E INTERO */
+/* CARDS CON DESIGN CUSTOM (Primi 3 da griglia, ultimi 4 immagini singole) */
 .visual {
-  height: 280px;
+  height: 270px;
   background: #09080d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   overflow: hidden;
 }
 .visual-art {
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  height: 100%;
   position: relative;
   z-index: 1;
   overflow: hidden;
 }
 .art-element {
   position: absolute;
-  background-image: url('carte.png.jpeg');
   background-repeat: no-repeat;
   transition: transform 0.4s ease;
 }
@@ -335,17 +333,37 @@ a { color: inherit; text-decoration: none; }
   transform: scale(1.04);
 }
 
-/* Fila in alto (3 riquadri quadrati: larghezza 300%, altezza 200%) */
-.fashion-high     { width: 300%; height: 200%; left: 0%;    top: 0%; background-size: 100% 100%; }
-.streetwear-brand { width: 300%; height: 200%; left: -100%; top: 0%; background-size: 100% 100%; }
-.electronics-mesh { width: 300%; height: 200%; left: -200%; top: 0%; background-size: 100% 100%; }
+/* Fila in alto (rimane dalla griglia carte.png.jpeg) */
+.fashion-high {
+  background-image: url('carte.png.jpeg');
+  width: 300%; height: 200%; left: 0%; top: 0%; background-size: 100% 100%;
+}
+.streetwear-brand {
+  background-image: url('carte.png.jpeg');
+  width: 300%; height: 200%; left: -100%; top: 0%; background-size: 100% 100%;
+}
+.electronics-mesh {
+  background-image: url('carte.png.jpeg');
+  width: 300%; height: 200%; left: -200%; top: 0%; background-size: 100% 100%;
+}
 
-/* Fila in basso (4 riquadri: larghezza 400%, altezza 200%) */
-.perfumes-glam    { width: 400%; height: 200%; left: 0%;    top: -100%; background-size: 100% 100%; }
-.vapes-smoke      { width: 400%; height: 200%; left: -100%; top: -100%; background-size: 100% 100%; }
-.toys-bricks      { width: 400%; height: 200%; left: -200%; top: -100%; background-size: 100% 100%; }
-.bundle-bg        { width: 400%; height: 200%; left: -300%; top: -100%; background-size: 100% 100%; }
+/* Nuove immagini singole perfette e non tagliate */
+.perfumes-glam,
+.vapes-smoke,
+.toys-bricks,
+.bundle-bg {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+}
 
+.perfumes-glam { background-image: url('profumi.jpg.jpeg'); }
+.vapes-smoke   { background-image: url('svapo.jpg.jpeg'); }
+.toys-bricks   { background-image: url('lego.jpg.jpeg'); }
+.bundle-bg     { background-image: url('bundle.jpg.jpeg'); }
 .art-label {
   position: absolute;
   bottom: 15px;
